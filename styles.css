@@ -841,4 +841,46 @@ nav ul li a:hover::after {
     background: rgba(255,255,255,0.7);
     padding: 6px 18px;
     border-radius: 8px;
+}
+
+.growth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.growth-button {
+    padding: 20px 40px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.growth-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.growth-button.youtube {
+    background-color: #FF0000;
+}
+
+.growth-button.instagram {
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.growth-button.twitter {
+    background-color: #1DA1F2;
 } 

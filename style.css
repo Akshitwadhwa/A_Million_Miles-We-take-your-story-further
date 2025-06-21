@@ -1,0 +1,128 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: #f5f7fa;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background: white;
+  color: #2c5364;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #ffd700;
+  color: black;
+}
+
+/* Section Styles */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about, .services, .portfolio, .testimonials, .contact {
+  background: white;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Services */
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.service-card {
+  background: #eaeef1;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+}
+
+/* Portfolio */
+.portfolio-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.portfolio-grid img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+/* Testimonials */
+.testimonials blockquote {
+  font-style: italic;
+  max-width: 600px;
+  margin: auto;
+}
+
+.testimonials span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Contact */
+.contact a {
+  color: #2c5364;
+  font-weight: 600;
+}
+
+/* Footer */
+footer {
+  background: #2c5364;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}

@@ -3,15 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start Growing</title>
+    <title>Start Growing - Choose Your Platform</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="growth-container">
-        <a href="#" class="growth-button youtube"><i class="fab fa-youtube"></i> yt</a>
-        <a href="#" class="growth-button instagram"><i class="fab fa-instagram"></i> insta</a>
-        <a href="#" class="growth-button twitter"><i class="fab fa-twitter"></i> twitter</a>
+<body class="growth-page-body">
+    <div class="growth-page-container">
+        <a href="index.html" class="back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <div class="page-header">
+            <div class="pill-badge">
+                <i class="fas fa-bullseye"></i> Choose Your Platform
+            </div>
+            <h1 class="main-heading">Which Platform Will You <span class="gradient-text-platforms">Dominate First?</span></h1>
+            <p class="sub-heading">Select your primary platform and we'll create a custom growth strategy tailored to your goals</p>
+        </div>
+        <div class="platform-cards-container">
+            <!-- YouTube Card -->
+            <a href="#" class="platform-card youtube">
+                <div class="platform-icon-wrapper">
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <h2 class="platform-title">YouTube</h2>
+                <p class="platform-description">Long-form and Shorts content strategy</p>
+                <ul class="features-list">
+                    <li>Monetization strategies</li>
+                    <li>Thumbnail optimization</li>
+                    <li>SEO optimization</li>
+                </ul>
+            </a>
+            <!-- Instagram Card -->
+            <a href="#" class="platform-card instagram">
+                <div class="platform-icon-wrapper">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <h2 class="platform-title">Instagram</h2>
+                <p class="platform-description">Reels, Stories, and feed content</p>
+                <ul class="features-list">
+                    <li>Hashtag strategies</li>
+                    <li>Story engagement</li>
+                    <li>Reel optimization</li>
+                </ul>
+            </a>
+            <!-- Twitter Card -->
+            <a href="#" class="platform-card twitter">
+                <div class="platform-icon-wrapper">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <h2 class="platform-title">Twitter</h2>
+                <p class="platform-description">Tweet threads and viral content</p>
+                <ul class="features-list">
+                    <li>Thread strategies</li>
+                    <li>Engagement tactics</li>
+                    <li>Trend analysis</li>
+                </ul>
+            </a>
+        </div>
     </div>
 </body>
 </html> 

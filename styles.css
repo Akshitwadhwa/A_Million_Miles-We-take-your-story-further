@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
@@ -892,4 +894,177 @@ nav ul li a:hover::after {
 
 .growth-button.twitter {
     background-color: #1DA1F2;
+}
+
+/* Growth Platform Page Styles */
+.growth-page-body {
+    background-color: #fff;
+    font-family: 'Inter', sans-serif;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.growth-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.back-to-home {
+    display: block;
+    text-align: left;
+    margin-bottom: 40px;
+    text-decoration: none;
+    color: #6c757d;
+    font-weight: 500;
+    transition: color 0.3s;
+    width: fit-content;
+}
+
+.back-to-home:hover {
+    color: #212529;
+}
+
+.back-to-home i {
+    margin-right: 8px;
+}
+
+.page-header {
+    margin-bottom: 60px;
+}
+
+.pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #6D28D9, #4F46E5);
+    color: white;
+    font-weight: 500;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.main-heading {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #212529;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+}
+
+.gradient-text-platforms {
+    background: linear-gradient(90deg, #8B5CF6, #3B82F6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.sub-heading {
+    font-size: 1.25rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.platform-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.platform-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+}
+
+.platform-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.platform-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.platform-icon-wrapper i {
+    color: white;
+    font-size: 2rem;
+}
+
+.platform-card.youtube .platform-icon-wrapper {
+    background-color: #FF0000;
+}
+
+.platform-card.instagram .platform-icon-wrapper {
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.platform-card.twitter .platform-icon-wrapper {
+    background-color: #1DA1F2;
+}
+
+.platform-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #212529;
+    margin: 0 0 8px 0;
+}
+
+.platform-description {
+    color: #6c757d;
+    margin-bottom: 20px;
+    min-height: 40px;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features-list li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px;
+    color: #495057;
+    font-weight: 500;
+}
+
+.features-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.platform-card.youtube .features-list li::before {
+    color: #FF0000;
+}
+
+.platform-card.instagram .features-list li::before {
+    color: #d6249f;
+}
+
+.platform-card.twitter .features-list li::before {
+    color: #1DA1F2;
 } 

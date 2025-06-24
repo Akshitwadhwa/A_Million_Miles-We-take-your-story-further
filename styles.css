@@ -898,7 +898,7 @@ nav ul li a:hover::after {
 
 /* Growth Platform Page Styles */
 .growth-page-body {
-    background-color: #fff;
+    background-color: #f3f7fd;
     font-family: 'Inter', sans-serif;
     color: #495057;
     line-height: 1.6;
@@ -1001,7 +1001,7 @@ nav ul li a:hover::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .platform-icon-wrapper i {
@@ -1023,16 +1023,18 @@ nav ul li a:hover::after {
 }
 
 .platform-title {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 800;
     color: #212529;
-    margin: 0 0 8px 0;
+    margin: 0 0 2px 0;
 }
 
 .platform-description {
     color: #6c757d;
-    margin-bottom: 20px;
-    min-height: 40px;
+    margin-bottom: 18px;
+    min-height: 32px;
+    font-size: 1.15rem;
+    margin-top: 0;
 }
 
 .features-list {

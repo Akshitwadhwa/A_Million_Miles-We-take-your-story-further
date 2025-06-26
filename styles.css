@@ -1069,4 +1069,40 @@ nav ul li a:hover::after {
 
 .platform-card.twitter .features-list li::before {
     color: #1DA1F2;
+}
+
+.platform-card.youtube:hover {
+    background: #ffe5e5;
+    border-color: #ffb3b3;
+}
+.platform-card.instagram:hover {
+    background: #fbe8fa;
+    border-color: #f7b6e6;
+}
+.platform-card.twitter:hover {
+    background: #e6f4ff;
+    border-color: #b3e0ff;
+}
+.platform-card:hover .platform-icon-wrapper {
+    filter: brightness(1.1) drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+}
+.platform-card:hover .platform-title {
+    color: #111827;
+}
+.platform-card:hover .platform-description {
+    color: #495057;
+}
+
+/* Selected badge style */
+.selected-badge {
+    display: inline-block;
+    background: #ff3b3b;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1em;
+    border-radius: 999px;
+    padding: 6px 18px;
+    margin-top: 18px;
+    box-shadow: 0 2px 8px rgba(255,59,59,0.08);
+    letter-spacing: 0.02em;
 } 

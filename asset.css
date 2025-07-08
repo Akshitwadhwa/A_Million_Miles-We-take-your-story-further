@@ -1366,4 +1366,268 @@ nav ul li a:hover::after {
     color: #18181b;
     font-size: 1em;
     font-weight: 500;
+}
+
+/* Short-Form Content Mastery Page Styles */
+.shortform-body {
+    background: linear-gradient(120deg, #f3f7fd 0%, #e9eafc 100%);
+    font-family: 'Inter', sans-serif;
+    color: #222;
+    min-height: 100vh;
+}
+.shortform-hero-section {
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+.shortform-hero-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #a78bfa, #38bdf8);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px auto;
+    box-shadow: 0 2px 12px rgba(56,189,248,0.08);
+}
+.shortform-hero-icon i {
+    color: #fff;
+    font-size: 2.3rem;
+}
+.shortform-hero-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #6366f1, #38bdf8);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1em;
+    border-radius: 999px;
+    padding: 8px 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 8px rgba(56,189,248,0.08);
+    letter-spacing: 0.02em;
+}
+.shortform-hero-badge i {
+    margin-right: 8px;
+}
+.shortform-hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #18181b;
+    margin: 0 0 10px 0;
+    line-height: 1.15;
+}
+.shortform-gradient-text {
+    background: linear-gradient(90deg, #a78bfa 0%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.shortform-hero-sub {
+    color: #6b7280;
+    font-size: 1.25rem;
+    margin-bottom: 44px;
+    margin-top: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.shortform-strategies-section {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+.shortform-strategies-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #18181b;
+    margin-bottom: 36px;
+}
+.shortform-strategies-grid {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.shortform-strategy-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(56,189,248,0.06);
+    padding: 36px 32px 28px 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    min-width: 340px;
+    max-width: 420px;
+    flex: 1 1 340px;
+    border: 1.5px solid #e0e7ef;
+}
+.shortform-strategy-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    box-shadow: 0 2px 8px rgba(56,189,248,0.08);
+}
+.shortform-strategy-icon i {
+    color: #fff;
+    font-size: 1.7rem;
+}
+.shortform-strategy-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #18181b;
+    margin-bottom: 4px;
+}
+.shortform-strategy-desc {
+    color: #6b7280;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+.shortform-strategy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.shortform-strategy-list li {
+    color: #6366f1;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 18px;
+}
+.shortform-strategy-list li::before {
+    content: '\2022';
+    color: #38bdf8;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    top: 0;
+}
+@media (max-width: 900px) {
+    .shortform-strategies-grid {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+    }
+    .shortform-strategy-card {
+        min-width: unset;
+        max-width: 98vw;
+        padding: 22px 10px 16px 10px;
+    }
+    .shortform-hero-title {
+        font-size: 2rem;
+    }
+}
+
+.yt-cta-section {
+    background: linear-gradient(90deg, #f44336 0%, #e53935 100%);
+    border-radius: 36px;
+    margin: 48px auto 36px auto;
+    padding: 56px 24px 56px 24px;
+    max-width: 1200px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 220px;
+}
+.yt-cta-icon {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 24px;
+}
+.yt-cta-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    color: #fff;
+}
+.yt-cta-sub {
+    font-size: 1.3rem;
+    margin-bottom: 38px;
+    color: #fff;
+}
+.yt-cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: #e53935;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 14px;
+    padding: 18px 44px;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(255,59,59,0.10);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    border: none;
+}
+.yt-cta-btn:hover {
+    background: #ffe5e5;
+    color: #b71c1c;
+    box-shadow: 0 4px 24px rgba(255,59,59,0.13);
+}
+@media (max-width: 900px) {
+    .yt-cta-section {
+        padding: 36px 8px 32px 8px;
+        border-radius: 18px;
+    }
+    .yt-cta-title {
+        font-size: 1.3rem;
+    }
+    .yt-cta-icon {
+        font-size: 2.2rem;
+    }
+}
+
+.platform-confirmation-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    margin-bottom: 0;
+    width: 100%;
+}
+.platform-confirm-btn {
+    display: inline-block;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    border-radius: 12px;
+    padding: 18px 44px;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(56,189,248,0.10);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    border: none;
+    margin: 0 auto;
+    text-align: center;
+}
+.platform-confirm-btn:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 4px 24px rgba(56,189,248,0.13);
+}
+.platform-card.selected {
+    border: 2.5px solid #f44336;
+    background: #fff6f6;
+    box-shadow: 0 4px 24px rgba(244,67,54,0.06);
+}
+.platform-card.selected.youtube {
+    border-color: #f44336;
+    background: #fff6f6;
+}
+.platform-card.selected.instagram {
+    border-color: #a21caf;
+    background: #fdf4ff;
+}
+.platform-card.selected.twitter {
+    border-color: #1DA1F2;
+    background: #f0faff;
 } 

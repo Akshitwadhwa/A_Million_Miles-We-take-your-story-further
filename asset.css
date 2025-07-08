@@ -1525,4 +1525,109 @@ nav ul li a:hover::after {
     .shortform-hero-title {
         font-size: 2rem;
     }
+}
+
+.yt-cta-section {
+    background: linear-gradient(90deg, #f44336 0%, #e53935 100%);
+    border-radius: 36px;
+    margin: 48px auto 36px auto;
+    padding: 56px 24px 56px 24px;
+    max-width: 1200px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 220px;
+}
+.yt-cta-icon {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 24px;
+}
+.yt-cta-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    color: #fff;
+}
+.yt-cta-sub {
+    font-size: 1.3rem;
+    margin-bottom: 38px;
+    color: #fff;
+}
+.yt-cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: #e53935;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 14px;
+    padding: 18px 44px;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(255,59,59,0.10);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    border: none;
+}
+.yt-cta-btn:hover {
+    background: #ffe5e5;
+    color: #b71c1c;
+    box-shadow: 0 4px 24px rgba(255,59,59,0.13);
+}
+@media (max-width: 900px) {
+    .yt-cta-section {
+        padding: 36px 8px 32px 8px;
+        border-radius: 18px;
+    }
+    .yt-cta-title {
+        font-size: 1.3rem;
+    }
+    .yt-cta-icon {
+        font-size: 2.2rem;
+    }
+}
+
+.platform-confirmation-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    margin-bottom: 0;
+    width: 100%;
+}
+.platform-confirm-btn {
+    display: inline-block;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    border-radius: 12px;
+    padding: 18px 44px;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(56,189,248,0.10);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    border: none;
+    margin: 0 auto;
+    text-align: center;
+}
+.platform-confirm-btn:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 4px 24px rgba(56,189,248,0.13);
+}
+.platform-card.selected {
+    border: 2.5px solid #f44336;
+    background: #fff6f6;
+    box-shadow: 0 4px 24px rgba(244,67,54,0.06);
+}
+.platform-card.selected.youtube {
+    border-color: #f44336;
+    background: #fff6f6;
+}
+.platform-card.selected.instagram {
+    border-color: #a21caf;
+    background: #fdf4ff;
+}
+.platform-card.selected.twitter {
+    border-color: #1DA1F2;
+    background: #f0faff;
 } 

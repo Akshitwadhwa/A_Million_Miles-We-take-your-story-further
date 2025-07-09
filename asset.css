@@ -214,65 +214,85 @@ footer {
 }
 
 /* Navbar Styles */
-nav {
-    background-color: rgba(51, 51, 51, 0.95);
-    padding: 15px 0;
-    position: fixed;
+.main-navbar {
     width: 100%;
-    top: 0;
-    z-index: 1000;
+    background: #fff;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 50px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.logo i {
-    margin-right: 10px;
-    color: #ff6b6b;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+    padding: 0 36px;
+    height: 68px;
+    box-shadow: 0 1px 8px 0 rgba(56, 189, 248, 0.04);
     position: relative;
+    z-index: 10;
 }
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #ff6b6b;
-    transition: width 0.3s;
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
-
-nav ul li a:hover::after {
-    width: 100%;
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border-radius: 12px;
+}
+.navbar-brand {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #6d28d9;
+    letter-spacing: -0.5px;
+    font-family: 'Inter', sans-serif;
+}
+.navbar-brand-bold {
+    color: #38bdf8;
+    font-weight: 800;
+}
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+.navbar-cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(90deg, #8B5CF6 0%, #38BDF8 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.08rem;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(56,189,248,0.10);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.navbar-cta-btn i {
+    font-size: 1.1em;
+}
+.navbar-cta-btn:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 4px 24px rgba(56,189,248,0.13);
+}
+@media (max-width: 700px) {
+    .main-navbar {
+        padding: 0 10px;
+        height: 54px;
+    }
+    .navbar-logo {
+        width: 28px;
+        height: 28px;
+    }
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    .navbar-cta-btn {
+        font-size: 0.95rem;
+        padding: 8px 16px;
+    }
 }
 
 /* Hero Section */

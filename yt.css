@@ -1,0 +1,313 @@
+/* YouTube Page Specific Styles */
+.yt-hero-section {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 32px;
+    padding-top: 0;
+}
+.yt-back-link {
+    display: inline-flex;
+    align-items: center;
+    text-align: left;
+    margin-top: 24px;
+    margin-left: 32px;
+    margin-bottom: 0;
+    text-decoration: none;
+    color: #6c757d;
+    font-weight: 500;
+    font-size: 1.08rem;
+    transition: color 0.3s;
+    width: fit-content;
+    position: relative;
+    z-index: 2;
+}
+.yt-back-link i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+.yt-back-link:hover {
+    color: #111827;
+}
+.yt-hero-icon-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+    margin-top: 18px;
+}
+.yt-hero-icon-inner {
+    width: 72px;
+    height: 72px;
+    background: #ef2323;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(255,59,59,0.08);
+}
+.yt-hero-icon-inner i {
+    color: #fff;
+    font-size: 2.7rem;
+}
+.yt-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #ef2323;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.08em;
+    border-radius: 999px;
+    padding: 8px 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 8px rgba(255,59,59,0.08);
+    letter-spacing: 0.01em;
+    gap: 10px;
+}
+.yt-hero-badge i {
+    font-size: 1.2em;
+    margin-right: 6px;
+}
+.yt-hero-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #18181b;
+    margin: 0 0 10px 0;
+    line-height: 1.13;
+}
+.yt-gradient-text {
+    background: linear-gradient(90deg, #a78bfa 0%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 3.1rem;
+}
+.yt-hero-sub {
+    color: #6b7280;
+    font-size: 1.18rem;
+    margin-bottom: 44px;
+    margin-top: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+@media (max-width: 900px) {
+    .yt-hero-title {
+        font-size: 1.5rem;
+    }
+    .yt-gradient-text {
+        font-size: 1.7rem;
+    }
+    .yt-hero-icon-inner {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+    }
+}
+
+/* YouTube Roadmap Section */
+.yt-roadmap-section {
+    padding: 32px 0 0 0;
+    background: none;
+}
+.yt-roadmap-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #18181b;
+    margin-bottom: 36px;
+}
+.yt-roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto 48px auto;
+}
+.yt-roadmap-card {
+    background: #fff;
+    border: 1.5px solid #ffe5e5;
+    border-radius: 16px;
+    padding: 32px 28px 24px 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    box-shadow: 0 4px 24px rgba(255,59,59,0.04);
+    min-width: 0;
+}
+.yt-roadmap-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    box-shadow: 0 2px 8px rgba(255,59,59,0.08);
+}
+.yt-roadmap-icon i {
+    color: #fff;
+    font-size: 1.7rem;
+}
+.yt-roadmap-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #18181b;
+    margin-bottom: 4px;
+}
+.yt-roadmap-card-desc {
+    color: #6b7280;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+.yt-roadmap-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.yt-roadmap-list li {
+    color: #ff3b3b;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 18px;
+}
+.yt-roadmap-list li::before {
+    content: '\2022';
+    color: #ff3b3b;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    top: 0;
+}
+@media (max-width: 900px) {
+    .yt-roadmap-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .yt-roadmap-card {
+        padding: 22px 10px 16px 10px;
+    }
+}
+
+/* YouTube Calendar Section */
+.yt-calendar-section {
+    background: linear-gradient(180deg, #fff6f6 0%, #fff 100%);
+    border-radius: 18px;
+    max-width: 900px;
+    margin: 0 auto 32px auto;
+    padding: 32px 0 24px 0;
+    box-shadow: 0 2px 12px rgba(255,59,59,0.04);
+    border: 1.5px solid #ffe5e5;
+    overflow-x: auto;
+}
+.yt-calendar-title {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #18181b;
+    margin-bottom: 6px;
+}
+.yt-calendar-sub {
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.05rem;
+    margin-bottom: 22px;
+}
+.yt-calendar-grid {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    min-width: 600px;
+    padding-bottom: 8px;
+}
+.yt-calendar-day {
+    background: #fff;
+    border: 1.5px solid #ffe5e5;
+    border-radius: 10px;
+    padding: 18px 18px 10px 18px;
+    min-width: 80px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(255,59,59,0.04);
+    margin-bottom: 8px;
+}
+.yt-calendar-day span {
+    color: #ff3b3b;
+    font-weight: 700;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 4px;
+}
+.yt-calendar-day div {
+    color: #18181b;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+/* YouTube CTA Section */
+.yt-cta-section {
+    background: linear-gradient(90deg, #f44336 0%, #e53935 100%);
+    border-radius: 36px;
+    margin: 48px auto 36px auto;
+    padding: 56px 24px 56px 24px;
+    max-width: 1200px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 220px;
+}
+.yt-cta-icon {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 24px;
+}
+.yt-cta-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    color: #fff;
+}
+.yt-cta-sub {
+    font-size: 1.3rem;
+    margin-bottom: 38px;
+    color: #fff;
+}
+.yt-cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: #e53935;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 14px;
+    padding: 18px 44px;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(255,59,59,0.10);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    border: none;
+}
+.yt-cta-btn:hover {
+    background: #ffe5e5;
+    color: #b71c1c;
+    box-shadow: 0 4px 24px rgba(255,59,59,0.13);
+}
+@media (max-width: 900px) {
+    .yt-cta-section {
+        padding: 36px 8px 32px 8px;
+        border-radius: 18px;
+    }
+    .yt-cta-title {
+        font-size: 1.3rem;
+    }
+    .yt-cta-icon {
+        font-size: 2.2rem;
+    }
+} 

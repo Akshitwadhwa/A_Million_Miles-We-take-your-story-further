@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build a Thriving Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles for better readability and modern feel */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* A slightly softer background */
+            line-height: 1.6; /* Improved line height for readability */
+            color: #333; /* Default text color */
+        }
+
+        /* Custom heading styles for visual hierarchy */
+        .section-heading {
+            color: #1a202c; /* Darker text for headings */
+            font-weight: 700;
+            letter-spacing: -0.025em; /* Slightly tighter letter spacing for headings */
+        }
+
+        /* Subheading styles */
+        .sub-heading {
+            color: #4a5568; /* Slightly lighter text for subheadings */
+            line-height: 1.5;
+        }
+
+        /* Card styles with enhanced shadows and hover effects */
+        .card {
+            background-color: #ffffff;
+            border-radius: 1.25rem; /* Even more rounded corners */
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 8px 15px -5px rgba(0, 0, 0, 0.08); /* More pronounced, softer shadow */
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+        }
+        .card:hover {
+            transform: translateY(-8px); /* More noticeable lift on hover */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 15px 30px -10px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+        }
+
+        /* List item styling with consistent icon alignment */
+        .icon-list-item {
+            display: flex;
+            align-items: flex-start; /* Align icons with the top of the text */
+            margin-bottom: 1rem; /* More space between list items */
+            font-size: 1.05rem; /* Slightly larger text for list items */
+            color: #4a5568;
+        }
+        .icon-list-item svg {
+            margin-right: 0.85rem;
+            color: #6366f1; /* A vibrant indigo for icons */
+            flex-shrink: 0; /* Prevent icon from shrinking */
+            margin-top: 0.2rem; /* Adjust icon vertical alignment */
+        }
+
+        /* Back button styling with improved hover */
+        .back-button {
+            display: inline-flex; /* Use inline-flex for better alignment */
+            align-items: center;
+            color: #6b7280; /* Grayer tone for subtlety */
+            font-weight: 500;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .back-button:hover {
+            color: #4b5563;
+            transform: translateX(-3px); /* Slight slide effect on hover */
+        }
+
+        /* Image styling for a modern look */
+        img {
+            object-fit: cover; /* Ensure images cover their area well */
+            border-radius: 1.5rem; /* Even more rounded corners for images */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for images */
+        }
+
+        /* Animation for sections on load */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+    <div class="container mx-auto px-6 py-12 max-w-7xl">
+        <!-- Back to Home Button -->
+        <div class="mb-12">
+            <a href="#" class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 14.707a1 1 0 01-1.414 0L7.293 10.414a1 1 0 010-1.414l3.999-4a1 1 0 011.414 1.414L9.414 10l3.293 3.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <!-- Header Section -->
+        <header class="text-center mb-20 fade-in-section">
+            <p class="text-indigo-600 text-base font-semibold mb-3 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-indigo-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 002-2V4H4zm10 10v2a2 2 0 002 2h4a2 2 0 002-2v-2H14zm-12 0h2v2a2 2 0 002 2h4a2 2 0 002-2v-2H2z" clip-rule="evenodd" />
+                </svg>
+                Community Building
+            </p>
+            <h1 class="section-heading text-5xl sm:text-6xl lg:text-7xl mb-6 leading-tight font-extrabold">Build a Thriving Community</h1>
+            <p class="sub-heading text-xl sm:text-2xl max-w-4xl mx-auto text-gray-600">Transform your audience into a loyal community that amplifies your message and drives organic growth.</p>
+        </header>
+
+        <!-- Main Content Sections -->
+        <main class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-20">
+            <!-- Building Authentic Connections Section -->
+            <section class="flex flex-col lg:flex-row items-center lg:items-start gap-10 fade-in-section">
+                <div class="lg:w-1/2 w-full">
+                    <img src="https://placehold.co/600x400/cfd8dc/455a64?text=Authentic+Connections" alt="People collaborating on laptops" class="w-full h-auto max-h-96">
+                </div>
+                <div class="lg:w-1/2 w-full card p-10">
+                    <h2 class="section-heading text-4xl mb-6">Building Authentic Connections</h2>
+                    <p class="text-gray-700 mb-8 text-lg">Create genuine relationships with your audience by showing your authentic self. Share your journey, struggles, and victories to build trust and relatability.</p>
+                    <h3 class="font-bold text-gray-800 mb-4 text-xl">Key Strategies:</h3>
+                    <ul>
+                        <li class="icon-list-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            Share behind-the-scenes content
+                        </li>
+                        <li class="icon-list-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            Be vulnerable and authentic
+                        </li>
+                        <li class="icon-list-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            Respond to every comment personally
+                        </li>
+                        <li class="icon-list-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            Ask questions to spark conversations
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Engaging Your Community Section -->
+            <section class="flex flex-col lg:flex-row items-center lg:items-start gap-10 fade-in-section">
+                <div class="lg:w-1/2 w-full card p-10 order-2 lg:order-1">
+                    <h2 class="section-heading text-4xl mb-6">Engaging Your Community</h2>
+                    <p class="text-gray-700 mb-8 text-lg">Turn passive viewers into active participants by creating interactive content that encourages engagement and builds a sense of belonging.</p>
+                    <h3 class="font-bold text-gray-800 mb-4 text-xl">Key Strategies:</h3>
+                    <ul>
+                        <li class="icon-list-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            Create polls and Q&A sessions
+                        </li>
+                        <li class="icon-list-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            Start trending challenges
+                        </li>
+                        <li class="icon-list-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            Host live sessions regularly
+                        </li>
+                        <li class="icon-list-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            Create community-specific hashtags
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2 w-full order-1 lg:order-2">
+                    <img src="https://placehold.co/600x400/cfd8dc/455a64?text=Engaging+Audience" alt="Multiple screens showing engaging content" class="w-full h-auto max-h-96">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // JavaScript for UI/UX enhancements like fade-in animations
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Community page loaded and ready!');
+
+            // Intersection Observer for fade-in animations
+            const sections = document.querySelectorAll('.fade-in-section');
+
+            const observerOptions = {
+                root: null, /* viewport */
+                rootMargin: '0px',
+                threshold: 0.1 /* 10% of element visible to trigger */
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // You can add more interactive JavaScript here if needed,
+            // for example, a smooth scroll for the "Back to Home" button
+            // or dynamic content loading.
+        });
+    </script>
+</body>
+</html>

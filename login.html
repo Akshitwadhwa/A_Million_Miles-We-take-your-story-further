@@ -31,5 +31,70 @@
     </form>
     <div class="login-legal">By signing in, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></div>
   </div>
+  <!-- Firebase App (core) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <!-- Firebase Auth -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <!-- Firebase Firestore (for storing login data) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script>
+    // Replace with your actual config from Firebase Console
+    const firebaseConfig = {
+  apiKey: "AIzaSyDH514a_Ow1098J6OiRiR2zr7aOT9ryyIg",
+  authDomain: "login-for-a-million-miles.firebaseapp.com",
+  projectId: "login-for-a-million-miles",
+  storageBucket: "login-for-a-million-miles.firebasestorage.app",
+  messagingSenderId: "361526963946",
+  appId: "1:361526963946:web:7cc5998b0dedfd9cdd7193",
+  measurementId: "G-5VP599JFN8"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+  </script>
+  <script>
+  document.querySelector('.login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    auth.signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // User signed in
+        const user = userCredential.user;
+        // Store login info in Firestore
+        db.collection('logins').add({
+          uid: user.uid,
+          email: user.email,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        // Redirect or show success
+        window.location.href = 'index.html';
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  });
+  </script>
+  <script>
+  document.querySelector('.login-google-btn').addEventListener('click', function() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider)
+      .then((result) => {
+        const user = result.user;
+        db.collection('logins').add({
+          uid: user.uid,
+          email: user.email,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        window.location.href = 'index.html';
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  });
+  </script>
 </body>
 </html> 

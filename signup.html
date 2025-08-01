@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In - ShortForm Growth</title>
+  <title>Sign Up - ShortForm Growth</title>
   <link rel="stylesheet" href="asset.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -11,25 +11,28 @@
   <div class="login-container">
     <div class="login-header">
       <h1 class="login-brand"><span class="login-brand-gradient">ShortForm <span>Growth</span></span></h1>
-      <div class="login-welcome">Welcome back! Sign in to your account</div>
+      <div class="login-welcome">Create your account to get started</div>
     </div>
     <form class="login-form">
-      <h2 class="login-title">Sign In</h2>
-      <div class="login-subtitle">Enter your credentials to access your account</div>
+      <h2 class="login-title">Sign Up</h2>
+      <div class="login-subtitle">Enter your details to create your account</div>
+      <button type="button" class="login-google-btn"><i class="fab fa-google"></i> Continue with Google</button>
       <div class="login-divider"><span>OR USE</span></div>
+      <label class="login-label" for="fullname">Full Name</label>
+      <input class="login-input" type="text" id="fullname" placeholder="Enter your full name" autocomplete="name">
       <label class="login-label" for="email">Email address</label>
       <input class="login-input" type="email" id="email" placeholder="Enter your email" autocomplete="username">
       <label class="login-label" for="password">Password</label>
-      <input class="login-input" type="password" id="password" placeholder="Enter your password" autocomplete="current-password">
+      <input class="login-input" type="password" id="password" placeholder="Enter your password" autocomplete="new-password">
+      <label class="login-label" for="confirmPassword">Confirm Password</label>
+      <input class="login-input" type="password" id="confirmPassword" placeholder="Confirm your password" autocomplete="new-password">
       <div class="login-row">
-        <label class="login-remember"><input type="checkbox"> Remember me</label>
-        <a href="#" class="login-forgot">Forgot password?</a>
+        <label class="login-remember"><input type="checkbox" id="terms"> I agree to the terms</label>
       </div>
-      <button type="submit" class="login-submit-btn">Sign In</button>
-      <button type="button" class="login-google-btn"><i class="fab fa-google"></i> Continue with Google</button>
-      <div class="login-signup">Don't have an account? <a href="#">Sign up</a></div>
+      <button type="submit" class="login-submit-btn">Create Account</button>
+      <div class="login-signup">Already have an account? <a href="login.html">Sign in</a></div>
     </form>
-    <div class="login-legal">By signing in, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></div>
+    <div class="login-legal">By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></div>
   </div>
   <!-- Firebase App (core) -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -57,17 +60,46 @@ const db = firebase.firestore();
   <script>
   document.querySelector('.login-form').addEventListener('submit', function(e) {
     e.preventDefault();
+    const fullname = document.getElementById('fullname').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    const terms = document.getElementById('terms').checked;
 
-    auth.signInWithEmailAndPassword(email, password)
+    // Validation
+    if (!fullname || !email || !password || !confirmPassword) {
+      alert('Please fill in all fields');
+      return;
+    }
+    if (password !== confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+    if (!terms) {
+      alert('Please agree to the terms');
+      return;
+    }
+    if (password.length < 6) {
+      alert('Password must be at least 6 characters');
+      return;
+    }
+
+    auth.createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
-        // User signed in
+        // User created
         const user = userCredential.user;
-        // Store login info in Firestore
+        // Store user info in Firestore
+        db.collection('users').doc(user.uid).set({
+          fullname: fullname,
+          email: user.email,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        // Store signup info in logins collection
         db.collection('logins').add({
           uid: user.uid,
           email: user.email,
+          fullname: fullname,
+          action: 'signup',
           timestamp: firebase.firestore.FieldValue.serverTimestamp()
         });
         // Redirect or show success
@@ -84,9 +116,18 @@ const db = firebase.firestore();
     auth.signInWithPopup(provider)
       .then((result) => {
         const user = result.user;
+        // Store user info in Firestore
+        db.collection('users').doc(user.uid).set({
+          fullname: user.displayName,
+          email: user.email,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        // Store signup info in logins collection
         db.collection('logins').add({
           uid: user.uid,
           email: user.email,
+          fullname: user.displayName,
+          action: 'signup',
           timestamp: firebase.firestore.FieldValue.serverTimestamp()
         });
         window.location.href = 'index.html';

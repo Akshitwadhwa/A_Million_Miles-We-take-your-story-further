@@ -649,9 +649,9 @@ footer {
 
 /* Hero Gradient Background */
 .hero-gradient-bg {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #ff6b9d 75%, #c471ed 100%);
+    background-size: 600% 600%;
+    animation: gradientShift 20s ease infinite;
     padding: 40px 20px;
     color: white;
     text-align: center;
@@ -663,10 +663,62 @@ footer {
     justify-content: center;
 }
 
+.hero-gradient-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(120, 255, 214, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 184, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 200, 255, 0.2) 0%, transparent 50%);
+    animation: floatingOrbs 25s ease-in-out infinite;
+    z-index: 0;
+}
+
+.hero-gradient-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    animation: gridMove 30s linear infinite;
+    z-index: 1;
+}
+
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
     100% { background-position: 0% 50%; }
+}
+
+@keyframes floatingOrbs {
+    0%, 100% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 0.7;
+    }
+    25% { 
+        transform: translate(50px, -30px) scale(1.1);
+        opacity: 0.9;
+    }
+    50% { 
+        transform: translate(-20px, 40px) scale(0.9);
+        opacity: 0.6;
+    }
+    75% { 
+        transform: translate(-40px, -20px) scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(10px, 10px); }
 }
 
 .hero-centered {
@@ -676,7 +728,7 @@ footer {
     text-align: center;
     width: 100%;
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .hero-centered::before {
@@ -1063,10 +1115,52 @@ footer {
 
 /* Growth Platform Page Styles */
 .growth-page-body {
-    background-color: #f3f7fd;
+    background: linear-gradient(135deg, #f3f7fd 0%, #e8f2ff 25%, #f0f9ff 50%, #e6f3ff 75%, #f3f7fd 100%);
+    background-size: 400% 400%;
+    animation: subtleGradientShift 30s ease infinite;
     font-family: 'Inter', sans-serif;
     color: #495057;
     line-height: 1.6;
+    position: relative;
+    min-height: 100vh;
+}
+
+.growth-page-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 15% 25%, rgba(102, 126, 234, 0.05) 0%, transparent 30%),
+        radial-gradient(circle at 85% 75%, rgba(56, 189, 248, 0.08) 0%, transparent 35%),
+        radial-gradient(circle at 60% 20%, rgba(139, 92, 246, 0.04) 0%, transparent 25%);
+    animation: backgroundOrbs 35s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes subtleGradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 50% 25%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 75%; }
+}
+
+@keyframes backgroundOrbs {
+    0%, 100% { 
+        transform: translate(0, 0);
+        opacity: 0.6;
+    }
+    33% { 
+        transform: translate(20px, -15px);
+        opacity: 0.8;
+    }
+    66% { 
+        transform: translate(-15px, 25px);
+        opacity: 0.4;
+    }
 }
 
 .growth-page-container {
@@ -1074,6 +1168,8 @@ footer {
     margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 .back-to-home {
@@ -1518,10 +1614,67 @@ footer {
 
 /* Short-Form Content Mastery Page Styles */
 .shortform-body {
-    background: linear-gradient(120deg, #f3f7fd 0%, #e9eafc 100%);
+    background: linear-gradient(120deg, #f3f7fd 0%, #e9eafc 35%, #f0f4ff 65%, #e6f2ff 100%);
+    background-size: 500% 500%;
+    animation: subtleGradientShift 25s ease infinite;
     font-family: 'Inter', sans-serif;
     color: #222;
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.shortform-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(167, 139, 250, 0.06) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 70%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 10%, rgba(99, 102, 241, 0.05) 0%, transparent 35%);
+    animation: floatingElements 30s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.shortform-body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="triangles" width="30" height="30" patternUnits="userSpaceOnUse"><polygon points="15,5 25,20 5,20" fill="none" stroke="%23a78bfa" stroke-width="0.5" opacity="0.05"/></pattern></defs><rect width="100%" height="100%" fill="url(%23triangles)"/></svg>');
+    animation: patternMove 50s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes floatingElements {
+    0%, 100% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 0.7;
+    }
+    25% { 
+        transform: translate(15px, -10px) scale(1.05);
+        opacity: 0.9;
+    }
+    50% { 
+        transform: translate(-10px, 20px) scale(0.95);
+        opacity: 0.5;
+    }
+    75% { 
+        transform: translate(-20px, -15px) scale(1.02);
+        opacity: 0.8;
+    }
+}
+
+@keyframes patternMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(30px, 30px); }
 }
 .shortform-hero-section {
     text-align: center;
@@ -1782,9 +1935,9 @@ footer {
 
 .login-body {
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #ff6b9d 75%, #c471ed 100%);
+    background-size: 600% 600%;
+    animation: gradientShift 20s ease infinite;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1800,8 +1953,49 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><g fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"><circle cx="30" cy="30" r="20"/><circle cx="30" cy="30" r="15"/><circle cx="30" cy="30" r="10"/></g></svg>') repeat;
-    animation: float 20s ease-in-out infinite;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 25%),
+        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 15%),
+        radial-gradient(circle at 30% 90%, rgba(255, 255, 255, 0.12) 0%, transparent 20%);
+    animation: particleFloat 25s ease-in-out infinite;
+    z-index: 1;
+}
+
+.login-body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23dots)"/></svg>');
+    animation: dotsMove 40s linear infinite;
+    z-index: 2;
+}
+
+@keyframes particleFloat {
+    0%, 100% { 
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.7;
+    }
+    25% { 
+        transform: translate(30px, -20px) rotate(90deg);
+        opacity: 1;
+    }
+    50% { 
+        transform: translate(-20px, 30px) rotate(180deg);
+        opacity: 0.5;
+    }
+    75% { 
+        transform: translate(-30px, -10px) rotate(270deg);
+        opacity: 0.8;
+    }
+}
+
+@keyframes dotsMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(20px, 20px); }
 }
 .login-container {
     width: 100%;
@@ -1810,6 +2004,8 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 10;
 }
 .login-header {
     text-align: center;

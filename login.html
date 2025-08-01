@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in to ShortForm Growth - Master short-form content growth strategies">
+  <meta name="robots" content="noindex, nofollow">
   <title>Sign In - ShortForm Growth</title>
   <link rel="stylesheet" href="asset.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="login-body">
   <div class="login-container">
@@ -13,88 +18,76 @@
       <h1 class="login-brand"><span class="login-brand-gradient">ShortForm <span>Growth</span></span></h1>
       <div class="login-welcome">Welcome back! Sign in to your account</div>
     </div>
-    <form class="login-form">
+    <form class="login-form" id="loginForm" novalidate>
       <h2 class="login-title">Sign In</h2>
       <div class="login-subtitle">Enter your credentials to access your account</div>
+      
+      <!-- Error/Success Messages -->
+      <div id="messageContainer" class="message-container" style="display: none;"></div>
+      
+      <button type="button" class="login-google-btn" id="googleBtn">
+        <i class="fab fa-google"></i> Continue with Google
+      </button>
       <div class="login-divider"><span>OR USE</span></div>
+      
       <label class="login-label" for="email">Email address</label>
-      <input class="login-input" type="email" id="email" placeholder="Enter your email" autocomplete="username">
+      <input class="login-input" type="email" id="email" name="email" placeholder="Enter your email" autocomplete="username" required>
+      <div class="error-message" id="emailError"></div>
+      
       <label class="login-label" for="password">Password</label>
-      <input class="login-input" type="password" id="password" placeholder="Enter your password" autocomplete="current-password">
-      <div class="login-row">
-        <label class="login-remember"><input type="checkbox"> Remember me</label>
-        <a href="#" class="login-forgot">Forgot password?</a>
+      <div class="password-container">
+        <input class="login-input" type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+        <button type="button" class="password-toggle" id="passwordToggle">
+          <i class="fas fa-eye"></i>
+        </button>
       </div>
-      <button type="submit" class="login-submit-btn">Sign In</button>
-      <button type="button" class="login-google-btn"><i class="fab fa-google"></i> Continue with Google</button>
-      <div class="login-signup">Don't have an account? <a href="#">Sign up</a></div>
+      <div class="error-message" id="passwordError"></div>
+      
+      <div class="login-row">
+        <label class="login-remember">
+          <input type="checkbox" id="rememberMe" name="rememberMe">
+          Remember me
+        </label>
+        <a href="#" class="login-forgot" id="forgotPassword">Forgot password?</a>
+      </div>
+      
+      <button type="submit" class="login-submit-btn" id="submitBtn">
+        <span class="btn-text">Sign In</span>
+        <span class="btn-loading" style="display: none;">
+          <i class="fas fa-spinner fa-spin"></i> Signing in...
+        </span>
+      </button>
+      
+      <div class="login-signup">Don't have an account? <a href="signup.html">Sign up</a></div>
     </form>
     <div class="login-legal">By signing in, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></div>
   </div>
-  <!-- Firebase App (core) -->
+
+  <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <!-- Firebase Auth -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-  <!-- Firebase Firestore (for storing login data) -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  
+  <!-- Production Firebase Config -->
   <script>
-    // Replace with your actual config from Firebase Console
+    // Firebase configuration - In production, use environment variables
     const firebaseConfig = {
-  apiKey: "AIzaSyDH514a_Ow1098J6OiRiR2zr7aOT9ryyIg",
-  authDomain: "login-for-a-million-miles.firebaseapp.com",
-  projectId: "login-for-a-million-miles",
-  storageBucket: "login-for-a-million-miles.firebasestorage.app",
-  messagingSenderId: "361526963946",
-  appId: "1:361526963946:web:7cc5998b0dedfd9cdd7193",
-  measurementId: "G-5VP599JFN8"
-};
+      apiKey: "AIzaSyDH514a_Ow1098J6OiRiR2zr7aOT9ryyIg",
+      authDomain: "login-for-a-million-miles.firebaseapp.com",
+      projectId: "login-for-a-million-miles",
+      storageBucket: "login-for-a-million-miles.firebasestorage.app",
+      messagingSenderId: "361526963946",
+      appId: "1:361526963946:web:7cc5998b0dedfd9cdd7193",
+      measurementId: "G-5VP599JFN8"
+    };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore();
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
   </script>
-  <script>
-  document.querySelector('.login-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    auth.signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        // User signed in
-        const user = userCredential.user;
-        // Store login info in Firestore
-        db.collection('logins').add({
-          uid: user.uid,
-          email: user.email,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        });
-        // Redirect or show success
-        window.location.href = 'index.html';
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
-  });
-  </script>
-  <script>
-  document.querySelector('.login-google-btn').addEventListener('click', function() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider)
-      .then((result) => {
-        const user = result.user;
-        db.collection('logins').add({
-          uid: user.uid,
-          email: user.email,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        });
-        window.location.href = 'index.html';
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
-  });
-  </script>
+  
+  <!-- Production Login Logic -->
+  <script src="js/auth.js"></script>
 </body>
 </html> 

@@ -2144,3 +2144,149 @@ footer {
         padding: 8px 14px;
     }
 } 
+
+/* Production Login Enhancements */
+.message-container {
+  margin-bottom: 16px;
+}
+
+.message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.message-success {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.message-error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.message-info {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.password-toggle:hover {
+  color: #374151;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.login-input:invalid {
+  border-color: #fca5a5;
+}
+
+.login-input:focus {
+  border-color: #a78bfa;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.login-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Security Enhancements */
+.login-form {
+  position: relative;
+}
+
+.login-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: none;
+  z-index: 10;
+}
+
+.login-form.loading::before {
+  display: block;
+}
+
+/* Accessibility Improvements */
+.login-input:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
+}
+
+.login-submit-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 480px) {
+  .login-form {
+    padding: 24px 16px 20px 16px;
+  }
+  
+  .message {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+  
+  .password-toggle {
+    right: 8px;
+  }
+}
+
+/* Performance Optimizations */
+.login-input,
+.login-submit-btn,
+.login-google-btn {
+  will-change: transform;
+}
+
+.login-submit-btn:hover {
+  transform: translateY(-1px);
+}
+
+.login-google-btn:hover {
+  transform: translateY(-1px);
+} 

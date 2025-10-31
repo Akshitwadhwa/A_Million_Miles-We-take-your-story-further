@@ -2247,8 +2247,7 @@ footer {
 .logout-btn {
     position: absolute;
     right: 36px;
-    top: 7%;
-    transform: translateY(-50%);
+    top: 24px;
     background: linear-gradient(90deg, #8B5CF6 0%, #38BDF8 100%);
     color: #fff;
     font-weight: 700;
@@ -2259,14 +2258,12 @@ footer {
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(56,189,248,0.10);
     transition: background 0.2s, box-shadow 0.2s;
-    margin-left: 18px;
+    z-index: 9999;
+    pointer-events: auto;
 }
-@media (max-width: 700px) {
-    .logout-btn {
-        right: 10px;
-        font-size: 0.95rem;
-        padding: 8px 14px;
-    }
+/* optional hover */
+.logout-btn:hover {
+    filter: brightness(0.95);
 }
 
 /* Enhanced Visual Effects */

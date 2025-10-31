@@ -59,4 +59,15 @@ window.addEventListener('DOMContentLoaded', function() {
         requestAnimationFrame(autoScroll);
     }
     autoScroll();
-}); 
+});
+
+function logout() {
+    try {
+        sessionStorage.clear();
+        localStorage.clear();
+    } catch (e) {
+        // ignore
+    }
+    // use replace so user can't go back to protected page via back button
+    window.location.replace('login.html');
+}

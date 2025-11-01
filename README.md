@@ -93,23 +93,3 @@ shortform-growth/
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🆘 Support
-
-For support and questions:
-- Create an issue in the repository
-- Check the Firebase documentation
-- Review the code comments
-
-## 🔮 Future Enhancements
-
-- [ ] Dashboard with analytics
-- [ ] Content scheduling tools
-- [ ] Social media integration
-- [ ] Advanced analytics
-- [ ] Mobile app version
-- [ ] Team collaboration features
-
----
-
-**Built with ❤️ for content creators and growth hackers**
